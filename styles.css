@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    padding-left: 200px;
+}
+
+.main {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bloque_1 {
+    height: 635px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("img/fondo1.jpg");
+}
+
+.bloque_2 {
+    height: 635px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.bloque_3 {
+    height: 635px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("img/fondo3.jpg");
+}
+
+.bloque_4 {
+    height: 635px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("img/fondo4.jpg");
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 10;
+}
+
+.header img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+.header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.header ul a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 32px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header ul a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.4s ease;
+}
+
+.header ul a:hover::after {
+    width: 100%;
+}
+
+.logos {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.logos > div {
+    flex: 1;
+    height: 100%;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: rgb(155, 151, 151);
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Oculta los demás bloques al hacer hover */
+.logos:hover > div {
+    flex: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Expande el bloque hovered */
+.logos > div:hover {
+    flex: 1 1 100%;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+/* Logo centrado pequeño al hacer hover */
+.logos > div::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Mostrar el logo centrado al hacer hover */
+.logos > div:hover::after {
+    opacity: 1;
+}
+
+/* Logo de cada bloque como fondo inicial + centrado al hacer hover */
+.Python {
+    background-image: url('logos/python.png');
+}
+.Python::after {
+    background-image: url('logos/python.png');
+}
+
+.HTML {
+    background-image: url('logos/html.png');
+}
+.HTML::after {
+    background-image: url('logos/html.png');
+}
+
+.CSS {
+    background-image: url('logos/css3.png');
+}
+.CSS::after {
+    background-image: url('logos/css3.png');
+}
+
+.JavaScript {
+    background-image: url('logos/javascript.png');
+}
+.JavaScript::after {
+    background-image: url('logos/javascript.png');
+}
+
+.Github {
+    background-image: url('logos/github.png');
+}
+.Github::after {
+    background-image: url('logos/github.png');
+}
+
+.contenedor {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.formulario button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 5px;
+}
+
+.formulario button:hover {
+  background-color: #005fa3;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
