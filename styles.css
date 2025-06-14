@@ -13,8 +13,26 @@ body {
     justify-content: center;
 }
 
+@font-face {
+    font-family: 'Fuente';
+    src: url('Minecraft.ttf') format('truetype');
+  }  
+
+.a,
+.b,
+.c,
+.d,
+.e,
+.titulo1,
+.titulo2,
+.titulo3,
+.titulo4,
+.titulo5{
+    font-family: "Fuente", minecraft;
+}
+
 .bloque_1 {
-    height: 635px;
+    height: 100vh;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,16 +41,40 @@ body {
 }
 
 .bloque_2 {
-    height: 635px;
+    height: 100vh;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
+    transition: background-image 0.4s ease;
+    background-image: url("img/fondo2.jpg"); /* Fondo por defecto */
+    background-color: black;
+}
+
+/* Fondo dinámico al hacer hover */
+.bloque_2:has(.Python:hover) {
+    background-image: url("img/1.jpg");
+}
+
+.bloque_2:has(.HTML:hover) {
+    background-image: url("img/2.jpg");
+}
+
+.bloque_2:has(.CSS:hover) {
+    background-image: url("img/3.jpg");
+}
+
+.bloque_2:has(.JavaScript:hover) {
+    background-image: url("img/4.jpg");
+}
+
+.bloque_2:has(.Github:hover) {
+    background-image: url("img/5.jpg");
 }
 
 .bloque_3 {
-    height: 635px;
+    height: 100vh;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -41,12 +83,12 @@ body {
 }
 
 .bloque_4 {
-    height: 635px;
+    height: 100vh;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("img/fondo4.jpg");
+    background-image: url("img/fondo5.jpg");
 }
 
 .header {
@@ -113,24 +155,14 @@ body {
 
 .logos > div {
     flex: 1;
-    height: 100%;
     transition: all 0.5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background-color: rgb(155, 151, 151);
-    background-size: 80px 80px;
-    background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     overflow: hidden;
-}
-
-/* Oculta los demás bloques al hacer hover */
-.logos:hover > div {
-    flex: 0;
-    opacity: 0;
-    pointer-events: none;
 }
 
 /* Expande el bloque hovered */
@@ -139,98 +171,102 @@ body {
     opacity: 1;
     pointer-events: auto;
     z-index: 10;
+    background-image: none;
 }
 
-/* Logo centrado pequeño al hacer hover */
-.logos > div::after {
-    content: '';
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+.logo-img {
+    width: 150px;
+    height: auto;
+    z-index: 10;
+    position: relative;
+    pointer-events: none;
+    transition: transform 0.3s ease;
 }
 
-/* Mostrar el logo centrado al hacer hover */
-.logos > div:hover::after {
-    opacity: 1;
+.logos > div:hover .logo-img {
+    transform: scale(1.2);
 }
 
-/* Logo de cada bloque como fondo inicial + centrado al hacer hover */
+/* Imágenes de cada logo */
 .Python {
-    background-image: url('logos/python.png');
-}
-.Python::after {
-    background-image: url('logos/python.png');
+    background-image: url('img/1.jpg')
 }
 
 .HTML {
-    background-image: url('logos/html.png');
-}
-.HTML::after {
-    background-image: url('logos/html.png');
+    background-image: url('img/2.jpg');
 }
 
 .CSS {
-    background-image: url('logos/css3.png');
-}
-.CSS::after {
-    background-image: url('logos/css3.png');
+    background-image: url('img/3.jpg');
 }
 
 .JavaScript {
-    background-image: url('logos/javascript.png');
-}
-.JavaScript::after {
-    background-image: url('logos/javascript.png');
+    background-image: url('img/4.jpg');
 }
 
 .Github {
-    background-image: url('logos/github.png');
-}
-.Github::after {
-    background-image: url('logos/github.png');
+    background-image: url('img/5.jpg');
 }
 
+.info-box {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 350px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    z-index: 20;
+    pointer-events: none;
+  }
+  
+  .logos > div:hover .info-box {
+    display: block;
+  }  
+
 .contenedor {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 600px;
-  margin: auto;
-  margin-top: 3rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 10em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .formulario input,
 .formulario textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: vertical;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
 }
 
 .formulario button {
-  background-color: var(--primary-color);
-  color: var(--white);
-  border: none;
-  padding: 0.75rem;
-  cursor: pointer;
-  transition: var(--transition);
-  border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: 5px;
 }
 
 .formulario button:hover {
-  background-color: #005fa3;
+    background-color: #005fa3;
 }
 
 .footer {
