@@ -27,8 +27,14 @@ body {
 .titulo2,
 .titulo3,
 .titulo4,
-.titulo5{
-    font-family: "Fuente", minecraft;
+.titulo5,
+.contenedor,
+.texto-sobre-mi,
+.boton-cv,
+.tarjeta,
+.proyectos_contenedor h2,
+.footer{
+  font-family: "Fuente", minecraft;
 }
 
 .bloque_1,
@@ -46,7 +52,6 @@ body {
 .texto-sobre-mi {
   max-width: 800px;
   padding: 2rem;
-  font-family: "Fuente", minecraft;
 }
 
 .texto-sobre-mi h1 {
@@ -66,10 +71,11 @@ body:has(#toggle-dark:checked) .bloque_3 {
 }
 
 .boton-cv {
-  font-family: "Fuente", minecraft;
   background-color: black;
   color: white;
   padding: 10px 20px;
+  display: inline-block;
+  margin-top: 4rem;
   text-decoration: none;
   border-radius: 8px;
   font-size: 20px;
@@ -186,22 +192,22 @@ body:has(#toggle-dark:checked) .bloque_3 {
 }
 
 .logos > div {
-    flex: 1;
-    transition: all 0.5s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
+  flex: 1;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .logos > div:hover {
-    flex: 1 1 100%;
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 10;
+  flex: 1 1 100%;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 10;
 }
 
 .logo-img {
@@ -260,16 +266,60 @@ body:has(#toggle-dark:checked) .bloque_3 {
   display: block;
   }
 
-.proyecto {
+.tarjetas_proyecto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.tarjeta {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+}
+
+.tarjeta img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contenido_tarjeta {
+  padding: 1.5rem;
   text-align: center;
 }
 
-.descripcion_proyecto {
-  font-family: "Fuente", minecraft;
+.contenido_tarjeta p {
   font-size: 1rem;
-  max-width: 500px;
-  margin: 0.5rem auto 2rem auto;
-  color: inherit;
+  margin-bottom: 1rem;
+}
+
+.link_tarjeta {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid white;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.link_tarjeta:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
 }
 
 .proyectos_contenedor {
@@ -277,30 +327,21 @@ body:has(#toggle-dark:checked) .bloque_3 {
   padding: 2rem;
 }
 
-.proyectos_botones {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.boton_proyecto {
-  font-family: "Fuente", minecraft;
-  font-size: 1.3rem;
-  background-color: black;
+body:has(#toggle-dark:checked) .tarjeta {
+  background-color: rgb(32, 32, 32);
   color: white;
-  padding: 15px 30px;
-  border-radius: 10px;
-  text-decoration: none;
-  border: 2px solid white;
-  transition: all 0.3s ease;
-  display: inline-block;
 }
 
-.boton_proyecto:hover {
+body:has(#toggle-dark:checked) .link_tarjeta {
   background-color: white;
   color: black;
   border-color: black;
+}
+
+body:has(#toggle-dark:checked) .link_tarjeta:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
 }
 
 .contenedor {
@@ -311,7 +352,6 @@ body:has(#toggle-dark:checked) .bloque_3 {
   margin-left: 14rem;
   margin-top: 5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  font-family: "Fuente", minecraft;
   backdrop-filter: blur(10px);
   border: 1px solid #ddd;
 }
