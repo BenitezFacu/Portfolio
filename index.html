@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <title>index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="stars-layer"></div>
-
     <header class="header">
-        <a href="#"><img src="img/logo.png" alt="logo" width="100px" height="100px"></a>
+        <img src="img/logo.png" alt="logo" width="100px" height="100px">
+        <label class="cambio_modo_oscuro">
+          <input type="checkbox" id="toggle-dark">
+          <span class="color"></span>
+        </label>
         <ul>
             <li><a href="#sobre-mi">Sobre mí</a></li>
             <li><a href="#habilidades">Habilidades</a></li>
@@ -18,7 +20,13 @@
         </ul>
     </header>
     <main class="main">
-        <div id = "sobre-mi" class = "bloque_1"></div>
+        <div id="sobre-mi" class="bloque_1">
+          <div class="texto-sobre-mi">
+            <h1>¡Hola! Soy Benitez</h1>
+            <p>Soy un apasionado de la programación, los videojuegos y los desafíos creativos. Me gusta construir cosas desde cero, aprender constantemente y compartir lo que sé con los demás.</p>
+            <a href="cv.pdf" download class="boton-cv">Descargar CV</a>
+          </div>
+        </div>
         <div id="habilidades" class="bloque_2">
             <div class="logos">
               <div class="Python">
@@ -57,14 +65,32 @@
                 </div>
               </div>
             </div>
-          </div> 
-        <div id = "proyectos" class = "bloque_3"></div>
+        </div> 
+        <div id="proyectos" class="bloque_3">
+          <div class="proyectos_contenedor">
+            <h2>Mis Proyectos</h2>
+            <div class="proyectos_botones">
+              <div class="proyecto">
+                <a href="https://github.com/BenitezFacu/Sudoku" class="boton_proyecto">🧩 Sudoku</a>
+                <p class="descripcion_proyecto">Un clásico juego de Sudoku desarrollado con interfaz gráfica. Permite jugar partidas completas y valida cada jugada.</p>
+              </div>
+              <div class="proyecto">
+                <a href="https://github.com/BenitezFacu/Palabras-Huergo" class="boton_proyecto">🔤 Pasapalabra</a>
+                <p class="descripcion_proyecto">Juego de preguntas y respuestas inspirado en el programa "Pasapalabra", con letras del abecedario y lógica por turnos.</p>
+              </div>
+              <div class="proyecto">
+                <a href="https://github.com/BenitezFacu/Space-Invaders" class="boton_proyecto">👾 Space Invaders</a>
+                <p class="descripcion_proyecto">Remake del clásico arcade con movimiento de nave, disparos y enemigos. Hecho con Pygame.</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="contacto" class="bloque_4">
             <div class="contenedor">
                 <h2>Contacto</h2>
                 <form class="formulario">
-                    <input type="text" placeholder="Tu nombre" required />
-                    <input type="email" placeholder="Tu correo" required />
+                    <input type="text" placeholder="Tu nombre" required>
+                    <input type="email" placeholder="Tu correo" required>
                     <textarea placeholder="Tu mensaje" rows="5" required></textarea>
                     <button type="submit">Enviar mensaje</button>
                 </form>
@@ -75,3 +101,4 @@
         <h1>© 2025 Skibidi. Todos los derechos reservados.</h1>
     </footer>
 </body>
+</html>
